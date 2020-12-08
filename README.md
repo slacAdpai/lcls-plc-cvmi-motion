@@ -1,4 +1,6 @@
-# lcls-twincat-template-project
+# lcls-plc-cvmi-motion
+
+TwinCAT 3 PLC program for the CVMI interaction point in the TMO endstation.
 
 This repository contains the standard files for starting a TwinCAT3 project and
 can be used as a template. 
