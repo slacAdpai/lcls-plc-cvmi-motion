@@ -23,5 +23,8 @@
 		<Axis File="GasNeedleY.xti" Id="5"/>
 		<Axis File="GasNeedleZ.xti" Id="6"/>
 		<Axis File="SamplePaddle.xti" Id="7"/>
+		<Axis File="KTOF_X.xti" Id="8"/>
+		<Axis File="KTOF_Y.xti" Id="9"/>
+		<Axis File="KTOF_Z.xti" Id="10"/>
 	</NC>
 </TcSmItem>
