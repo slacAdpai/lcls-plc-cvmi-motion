@@ -10,7 +10,7 @@
 		<Box File="Motion01_EK1.xti" Id="6">
 			<EtherCAT PortABoxInfo="#x03000005"/>
 		</Box>
-		<Box File="Term 19 (EK1100).xti" Id="19">
+		<Box File="Motion02_EK1.xti" Id="19">
 			<EtherCAT PortABoxInfo="#x01000012"/>
 		</Box>
 	</Box>

@@ -7,13 +7,13 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00120000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100"/>
-		<Box File="KTOFX_E1.xti" Id="20">
+		<Box File="KTOF_X-EL7041.xti" Id="20">
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="KTOFY_E2.xti" Id="21">
+		<Box File="KTOF_Y-EL7041.xti" Id="21">
 			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
-		<Box File="KTOFZ_E3.xti" Id="22">
+		<Box File="KTOF_Z-EL7041.xti" Id="22">
 			<EtherCAT PortABoxInfo="#x01000015"/>
 		</Box>
 		<Box File="END_EL9011.xti" Id="23">
