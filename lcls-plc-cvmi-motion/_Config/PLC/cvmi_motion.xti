@@ -2560,37 +2560,45 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="cvmi_motion Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasJetX-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasJetX-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasJetY-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasJetY-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasJetZ-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasJetZ-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasNeedleX-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasNeedleX-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasNeedleY-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasNeedleY-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasNeedleZ-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasNeedleZ-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion02_EK1^KTOF_X-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^Junction01-EK1122-0080^Coupler02-EK1101-0080^KTOF_X-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M8.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion02_EK1^KTOF_Y-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^Junction01-EK1122-0080^Coupler02-EK1101-0080^KTOF_Y-EL7041">
 				<Link VarA="PlcTask Inputs^Main.M9.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M9.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^Junction01-EK1122-0080^Coupler02-EK1101-0080^KTOF_Z-EL7041">
+				<Link VarA="PlcTask Inputs^Main.M10.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M10.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^SamplePaddle-EL7041">
+				<Link VarA="PlcTask Inputs^Main.M7.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^GasJetX">
 				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>

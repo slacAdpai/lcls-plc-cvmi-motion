@@ -1583,7 +1583,7 @@ External Setpoint Generation:
 	</Axis>
 	<Mappings>
 		<OwnerA>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^CVMI_EK1200_CX0^Junction01_E4^Motion01_EK1^GasJetY-EL7041">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Coupler01-EK1100^GasJetY-EL7041">
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Error" Size="1" OffsA="3"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving negative" Size="1" OffsA="5"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Moving positive" Size="1" OffsA="4"/>

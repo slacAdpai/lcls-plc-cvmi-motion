@@ -30,8 +30,14 @@
 		<Image Id="2" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
+		<Image Id="4" AddrType="10" ImageType="3">
+			<Name>Image-2</Name>
+		</Image>
 		<Box File="CVMI_EK1200_CX0.xti" Id="1">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
+		</Box>
+		<Box File="Coupler01-EK1100.xti" Id="19">
+			<EtherCAT PortABoxInfo="#x01000012"/>
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="2" MaxSwitchFrames="120"/>
 	</Device>
