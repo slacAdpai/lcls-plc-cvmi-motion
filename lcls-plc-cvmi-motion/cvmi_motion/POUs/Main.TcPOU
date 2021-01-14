@@ -62,15 +62,15 @@ VAR
 	'}
 	M8	    : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF X
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:KTOF:MMS:02
 	'}
 	M9	    : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:KTOF:MMS:03
 	'}
@@ -110,11 +110,9 @@ VAR PERSISTENT
 	fKTOF_ZPos : LREAL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-IF bInit THEN
+      <ST><![CDATA[IF bInit THEN
 	//Sets axes position with persistent value
 	// CVMI
-	(*
 	mcSetPosition[1](Axis:=M1.Axis, Position:=fGasJetXPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[2](Axis:=M2.Axis, Position:=fGasJetYPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[3](Axis:=M3.Axis, Position:=fGasJetZPos, Mode:=FALSE, Execute:=TRUE);
@@ -122,15 +120,16 @@ IF bInit THEN
 	mcSetPosition[5](Axis:=M5.Axis, Position:=fGasNeedleYPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[7](Axis:=M7.Axis, Position:=fSamplePaddlePos, Mode:=FALSE, Execute:=TRUE);
-	*)
 	// KTOF
 	mcSetPosition[8](Axis:=M8.Axis, Position:=fKTOF_XPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[9](Axis:=M9.Axis, Position:=fKTOF_YPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[10](Axis:=M10.Axis, Position:=fKTOF_ZPos, Mode:=FALSE, Execute:=TRUE);
-	if (mcSetPosition[8].Done and NOT mcSetPosition[8].Error) AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) 
-	AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error) THEN
+	if (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error) 
+		AND (mcSetPosition[3].Done and NOT mcSetPosition[3].Error) AND (mcSetPosition[4].Done and NOT mcSetPosition[4].Error) 
+		AND (mcSetPosition[5].Done and NOT mcSetPosition[5].Error) AND (mcSetPosition[6].Done and NOT mcSetPosition[6].Error) 
+		AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error)
+        AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error) THEN
 		bInit:=FALSE;
-		(*
 		mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
 		mcSetPosition[2](Axis:=M2.Axis, Execute:=FALSE);
 		mcSetPosition[3](Axis:=M3.Axis, Execute:=FALSE);
@@ -138,7 +137,6 @@ IF bInit THEN
 		mcSetPosition[5](Axis:=M5.Axis, Execute:=FALSE);
 		mcSetPosition[6](Axis:=M6.Axis, Execute:=FALSE);
 		mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
-		*)
 		mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
 		mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
 		mcSetPosition[10](Axis:=M10.Axis, Execute:=FALSE);
@@ -180,7 +178,6 @@ ELSE
 
 	//Keep track of position
 	// CVMI
-	(*
 	fGasJetXPos		    := M1.Axis.NcToPlc.ActPos;
 	fGasJetYPos		    := M2.Axis.NcToPlc.ActPos;
 	fGasJetZPos		    := M3.Axis.NcToPlc.ActPos;
@@ -188,7 +185,6 @@ ELSE
 	fGasNeedleYPos	    := M5.Axis.NcToPlc.ActPos;
 	fGasNeedleZPos	    := M6.Axis.NcToPlc.ActPos;
 	fSamplePaddlePos	:= M7.Axis.NcToPlc.ActPos;
-	*)
 	// KTOF
 	fKTOF_XPos := M8.Axis.NcToPlc.ActPos;
 	fKTOF_YPos := M9.Axis.NcToPlc.ActPos;
@@ -204,23 +200,7 @@ ELSE
 END_IF;]]></ST>
     </Implementation>
     <LineIds Name="Main">
-      <LineId Id="197" Count="0" />
-      <LineId Id="3" Count="2" />
-      <LineId Id="198" Count="0" />
-      <LineId Id="6" Count="6" />
-      <LineId Id="199" Count="0" />
-      <LineId Id="13" Count="3" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="206" Count="0" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="207" Count="0" />
-      <LineId Id="23" Count="6" />
-      <LineId Id="208" Count="0" />
-      <LineId Id="30" Count="40" />
-      <LineId Id="209" Count="0" />
-      <LineId Id="71" Count="6" />
-      <LineId Id="210" Count="0" />
-      <LineId Id="78" Count="11" />
+      <LineId Id="405" Count="86" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
