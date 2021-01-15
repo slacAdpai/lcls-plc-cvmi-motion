@@ -47,8 +47,8 @@ VAR
 	'}
 	M6	    : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle Z
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddle-EL7041]^Channel 1^Input;
-                              .bLimitBackwardEnable:=TIIB[SamplePaddle-EL7041]^Channel 2^Input'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddle-EL7041]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[SamplePaddle-EL7041]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: TMO:CVMI:MMS:07
 	'}
@@ -62,15 +62,15 @@ VAR
 	'}
 	M8	    : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF X
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:KTOF:MMS:02
 	'}
 	M9	    : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Z-EL7041]^Channel 1^Input;
-                              .bLimitBackwardEnable:=TIIB[KTOF_Z-EL7041]^Channel 2^Input'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:KTOF:MMS:03
 	'}
@@ -199,5 +199,9 @@ ELSE
 	END_IF	
 END_IF;]]></ST>
     </Implementation>
+    <LineIds Name="Main">
+      <LineId Id="405" Count="86" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
