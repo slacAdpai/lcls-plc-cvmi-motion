@@ -54,7 +54,7 @@ VAR
     '}
     M7 : DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle
 
-	// KTOF Axes
+    // KTOF Axes
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_X-EL7041]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[KTOF_X-EL7041]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
