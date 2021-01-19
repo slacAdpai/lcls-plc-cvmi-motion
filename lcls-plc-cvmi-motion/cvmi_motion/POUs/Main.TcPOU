@@ -12,15 +12,15 @@ VAR
 	'}
 	M1		: DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet X
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:CVMI:MMS:02
 	'}
 	M2		: DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet Y
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:CVMI:MMS:03
 	'}
@@ -33,8 +33,8 @@ VAR
 	'}
 	M4	    : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle X
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2'}
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1'}
 	{attribute 'pytmc' := '
 		pv: TMO:CVMI:MMS:05
 	'}
@@ -197,10 +197,11 @@ ELSE
 		fbWritePersistentData(START:=FALSE);
 		fbWriteDelay(IN:=TRUE, PT:=T#0.5S);
 	END_IF	
+	
 END_IF;]]></ST>
     </Implementation>
     <LineIds Name="Main">
-      <LineId Id="405" Count="86" />
+      <LineId Id="405" Count="87" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
