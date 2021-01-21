@@ -4,7 +4,8 @@ python: 3.7
 env:
   global:
     # doctr generated secure variable for documentation upload
-    - secure: "<your secure here>"
+    # Doctr deploy key for pcdshub/lcls-plc-cvmi-motion
+    - secure: "FkH6PKTbqSb7yMe9ndoU3srgJzgr0H7YIRSq9nkZ9QAKkhJ10ZDz/mh5prtlIejeqyGV15GC0UZLFbeOAVhwSiZw/AIxPtmlAm16gMILIl4oqHPP1GS8KaV2eQ5Gp2TmPnug3ANMWRWt/B/LGWfgXpLNqClXoddlcUYMRu/8BxZE/HzszWgt4Gq64bnLAnDr+BN9egFNCRp+pgr0EHqInpXATBoQZu9e2SuwDFkOXUe5W89e/CL5/en1sL0/FfOoc2M6uWFBSkSFiq31iLp0MGcqqnnG5xGSxvMamUz0D41rXevHzftUeAUn8E5/XIsCgiAw16/7a0SwSZXda2ib3bc9DcGCoCIGjaoa5QYg7Vd+jMqFmFQhxjfx7lWfATiiok72n/YCVENsYZz/kpQKSYUzEeroz2nxh6nSDlWg4McS/ml0KgZGYoQXA6oyIH5+jHzjyZvAgmfXieQ1rdECIfJmw60iCWn9aHnYFFkb2h+nspjrIyrH3UXmFRYEgQta1B8YlShKa34kMVxtAMbwTKZf8b6dhFEeCQ+8ndn9owfgdhA/TszGFs/Wo9le8Uu7q7XDB8aN3N1Kfpcj5g9RL09XxgE49uhJnBRD7zvmy2VgkcALoLd7Xsyl1Tq0S7Q9k2H9WDqiL4T5l/ABmfvfO5IRztE1MiJqV04Yw8WhPcQ="
     - TWINCAT_STYLE_EXCLUDE=
     # If using a custom version of the CI helpers, change the following in
     # addition to the `import` block elow:
