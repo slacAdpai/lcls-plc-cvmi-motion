@@ -1,0 +1,21 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`cvmi_motion <cvmi_motion_overview_pragmas>`, 20, 0
+
+
+.. _cvmi_motion_overview_pragmas:
+
+
+cvmi_motion
+^^^^^^^^^^^
+
+Total pragmas found: 20
+Total linter errors: 0
+
+

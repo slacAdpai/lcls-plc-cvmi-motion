@@ -1,0 +1,293 @@
+
+NC Settings
+-----------
+
+.. csv-table::
+    :header: Axis ID, Name
+    :align: center
+
+        1, GasJetX
+        2, GasJetY
+        3, GasJetZ
+        4, GasNeedleX
+        5, GasNeedleY
+        6, GasNeedleZ
+        7, SamplePaddle
+        8, KTOF_X
+        9, KTOF_Y
+        10, KTOF_Z
+
+
+
+Axis 1: GasJetX
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 1
+    Name, GasJetX
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:Inverse, true
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 3.90625e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 16.1
+    Enc:SoftEndMinControl:Enable, true
+    Id, 1
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 2: GasJetY
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 2
+    Name, GasJetY
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 3.90625e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 82.2
+    Enc:SoftEndMinControl:Enable, true
+    Id, 2
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 3: GasJetZ
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 3
+    Name, GasJetZ
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 9.375e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 29.4
+    Enc:SoftEndMinControl:Enable, true
+    Id, 3
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 4: GasNeedleX
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 4
+    Name, GasNeedleX
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 7.8125e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 13
+    Enc:SoftEndMinControl:Enable, true
+    Id, 4
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 5: GasNeedleY
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 5
+    Name, GasNeedleY
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:Inverse, true
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 7.8125e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 55
+    Enc:SoftEndMinControl:Enable, true
+    Id, 5
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 6: GasNeedleZ
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 6
+    Name, GasNeedleZ
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 0.0001171875
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 38
+    Enc:SoftEndMinControl:Enable, true
+    Id, 6
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 7: SamplePaddle
+^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 7
+    Name, SamplePaddle
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 7.8125e-05
+    Enc:SoftEndMaxControl:Range, 2
+    Enc:SoftEndMinControl:Range, -2
+    Id, 7
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 8: KTOF_X
+^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 8
+    Name, KTOF_X
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 3.90625e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 90
+    Enc:SoftEndMinControl:Enable, true
+    Id, 8
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 9: KTOF_Y
+^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 9
+    Name, KTOF_Y
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:Inverse, true
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 9.375e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 34.8
+    Enc:SoftEndMinControl:Enable, true
+    Id, 9
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+
+
+Axis 10: KTOF_Z
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 10
+    Name, KTOF_Z
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2
+    Dynamic:Deceleration, 2
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 4
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:Inverse, true
+    Enc:MaxCount, #x0000ffff
+    Enc:ScaleFactorNumerator, 9.375e-05
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 25.1
+    Enc:SoftEndMinControl:Enable, true
+    Id, 10
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1
+
+

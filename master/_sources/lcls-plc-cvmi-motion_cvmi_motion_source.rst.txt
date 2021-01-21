@@ -1,0 +1,218 @@
+
+
+DUTs
+----
+
+
+GVLs
+----
+
+
+POUs
+----
+
+
+Main
+^^^^
+
+::
+
+    PROGRAM Main
+    VAR
+        // Motors
+        // CVMI Axes
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 2'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:01
+        '}
+        M1 : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet X
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable:=TIIB[GasJetY-EL7041]^STM Status^Status^Digital input 1'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:02
+        '}
+        M2 : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet Y
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable:=TIIB[GasJetZ-EL7041]^STM Status^Status^Digital input 1'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:03
+        '}
+        M3 : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Jet Z
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:=TIIB[GasNeedleX-EL7041]^STM Status^Status^Digital input 2'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:04
+        '}
+        M4 : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle X
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable:=TIIB[GasNeedleY-EL7041]^STM Status^Status^Digital input 1'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:05
+        '}
+        M5 : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle Y
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:=TIIB[GasNeedleZ-EL7041]^STM Status^Status^Digital input 2'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:06
+        '}
+        M6 : DUT_MotionStage := (bPowerSelf:=TRUE); // Gas Needle Z
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[SamplePaddle-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:=TIIB[SamplePaddle-EL7041]^STM Status^Status^Digital input 2'}
+        {attribute 'pytmc' := '
+            pv: TMO:CVMI:MMS:07
+        '}
+        M7 : DUT_MotionStage := (bPowerSelf:=TRUE); // Sample Paddle
+
+        // KTOF Axes
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_X-EL7041]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:=TIIB[KTOF_X-EL7041]^STM Status^Status^Digital input 2'}
+        {attribute 'pytmc' := '
+            pv: TMO:KTOF:MMS:01
+        '}
+        M8 : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF X
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable:=TIIB[KTOF_Y-EL7041]^STM Status^Status^Digital input 1'}
+        {attribute 'pytmc' := '
+            pv: TMO:KTOF:MMS:02
+        '}
+        M9 : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF Y
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable:=TIIB[KTOF_Z-EL7041]^STM Status^Status^Digital input 1'}
+        {attribute 'pytmc' := '
+            pv: TMO:KTOF:MMS:03
+        '}
+        M10 : DUT_MotionStage := (bPowerSelf:=TRUE); // KTOF Z
+
+        // CVMI Axes
+        fbMotionStageM1 : FB_MotionStage;
+        fbMotionStageM2 : FB_MotionStage;
+        fbMotionStageM3 : FB_MotionStage;
+        fbMotionStageM4 : FB_MotionStage;
+        fbMotionStageM5 : FB_MotionStage;
+        fbMotionStageM6 : FB_MotionStage;
+        fbMotionStageM7 : FB_MotionStage;
+        // KTOF Axes
+        fbMotionStageM8 : FB_MotionStage;
+        fbMotionStageM9 : FB_MotionStage;
+        fbMotionStageM10 : FB_MotionStage;
+
+        //persistent data
+        fbWritePersistentData : WritePersistentData;
+        bInit : BOOL := TRUE;
+        fbWriteDelay : TON;
+        mcSetPosition : ARRAY [1..10] of MC_SetPosition;
+    END_VAR
+    VAR PERSISTENT
+        // CVMI Axes
+        fGasJetXPos : LREAL;
+        fGasJetYPos : LREAL;
+        fGasJetZPos : LREAL;
+        fGasNeedleXPos : LREAL;
+        fGasNeedleYPos : LREAL;
+        fGasNeedleZPos : LREAL;
+        fSamplePaddlePos : LREAL;
+        // KTOF Axes
+        fKTOF_XPos : LREAL;
+        fKTOF_YPos : LREAL;
+        fKTOF_ZPos : LREAL;
+    END_VAR
+    IF bInit THEN
+        //Sets axes position with persistent value
+        // CVMI
+        mcSetPosition[1](Axis:=M1.Axis, Position:=fGasJetXPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[2](Axis:=M2.Axis, Position:=fGasJetYPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[3](Axis:=M3.Axis, Position:=fGasJetZPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[4](Axis:=M4.Axis, Position:=fGasNeedleXPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[5](Axis:=M5.Axis, Position:=fGasNeedleYPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[6](Axis:=M6.Axis, Position:=fGasNeedleZPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[7](Axis:=M7.Axis, Position:=fSamplePaddlePos, Mode:=FALSE, Execute:=TRUE);
+        // KTOF
+        mcSetPosition[8](Axis:=M8.Axis, Position:=fKTOF_XPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[9](Axis:=M9.Axis, Position:=fKTOF_YPos, Mode:=FALSE, Execute:=TRUE);
+        mcSetPosition[10](Axis:=M10.Axis, Position:=fKTOF_ZPos, Mode:=FALSE, Execute:=TRUE);
+        if (mcSetPosition[1].Done and NOT mcSetPosition[1].Error) AND (mcSetPosition[2].Done and NOT mcSetPosition[2].Error)
+            AND (mcSetPosition[3].Done and NOT mcSetPosition[3].Error) AND (mcSetPosition[4].Done and NOT mcSetPosition[4].Error)
+            AND (mcSetPosition[5].Done and NOT mcSetPosition[5].Error) AND (mcSetPosition[6].Done and NOT mcSetPosition[6].Error)
+            AND (mcSetPosition[7].Done and NOT mcSetPosition[7].Error) AND (mcSetPosition[8].Done and NOT mcSetPosition[8].Error)
+            AND (mcSetPosition[9].Done and NOT mcSetPosition[9].Error) AND (mcSetPosition[10].Done and NOT mcSetPosition[10].Error) THEN
+            bInit:=FALSE;
+            mcSetPosition[1](Axis:=M1.Axis, Execute:=FALSE);
+            mcSetPosition[2](Axis:=M2.Axis, Execute:=FALSE);
+            mcSetPosition[3](Axis:=M3.Axis, Execute:=FALSE);
+            mcSetPosition[4](Axis:=M4.Axis, Execute:=FALSE);
+            mcSetPosition[5](Axis:=M5.Axis, Execute:=FALSE);
+            mcSetPosition[6](Axis:=M6.Axis, Execute:=FALSE);
+            mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
+            mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
+            mcSetPosition[9](Axis:=M9.Axis, Execute:=FALSE);
+            mcSetPosition[10](Axis:=M10.Axis, Execute:=FALSE);
+        END_IF
+    ELSE
+        // Hardware Enable
+        // CVMI
+        // Gas Jet
+        M1.bHardwareEnable := TRUE;
+        M2.bHardwareEnable := TRUE;
+        M3.bHardwareEnable := TRUE;
+        // Gas Needle
+        M4.bHardwareEnable := TRUE;
+        M5.bHardwareEnable := TRUE;
+        M6.bHardwareEnable := TRUE;
+        // Sample Paddle
+        M7.bHardwareEnable := TRUE;
+        // KTOF
+        M8.bHardwareEnable := TRUE;
+        M9.bHardwareEnable := TRUE;
+        M10.bHardwareEnable	:= TRUE;
+
+        // fbMotionStage
+        // CVMI
+        // Gas Jet
+        fbMotionStageM1(stMotionStage:=M1);
+        fbMotionStageM2(stMotionStage:=M2);
+        fbMotionStageM3(stMotionStage:=M3);
+        // Gas Needle
+        fbMotionStageM4(stMotionStage:=M4);
+        fbMotionStageM5(stMotionStage:=M5);
+        fbMotionStageM6(stMotionStage:=M6);
+        // Sample Paddle
+        fbMotionStageM7(stMotionStage:=M7);
+        // KTOF
+        fbMotionStageM8(stMotionStage:=M8);
+        fbMotionStageM9(stMotionStage:=M9);
+        fbMotionStageM10(stMotionStage:=M10);
+
+        //Keep track of position
+        // CVMI
+        fGasJetXPos := M1.Axis.NcToPlc.ActPos;
+        fGasJetYPos := M2.Axis.NcToPlc.ActPos;
+        fGasJetZPos := M3.Axis.NcToPlc.ActPos;
+        fGasNeedleXPos := M4.Axis.NcToPlc.ActPos;
+        fGasNeedleYPos := M5.Axis.NcToPlc.ActPos;
+        fGasNeedleZPos := M6.Axis.NcToPlc.ActPos;
+        fSamplePaddlePos := M7.Axis.NcToPlc.ActPos;
+        // KTOF
+        fKTOF_XPos := M8.Axis.NcToPlc.ActPos;
+        fKTOF_YPos := M9.Axis.NcToPlc.ActPos;
+        fKTOF_ZPos := M10.Axis.NcToPlc.ActPos;
+
+        IF fbWriteDelay.Q THEN
+            fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
+            fbWriteDelay(IN:=FALSE);
+        ELSE
+            fbWritePersistentData(START:=FALSE);
+            fbWriteDelay(IN:=TRUE, PT:=T#0.5S);
+        END_IF
+    END_IF;
+
+    END_PROGRAM
+

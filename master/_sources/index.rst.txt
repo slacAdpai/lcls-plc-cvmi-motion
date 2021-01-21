@@ -1,0 +1,29 @@
+lcls-plc-cvmi-motion
+--------------------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: lcls-plc-cvmi-motion
+
+    lcls-plc-cvmi-motion_pragmas
+    lcls-plc-cvmi-motion_nc
+    lcls-plc-cvmi-motion_boxes
+    lcls-plc-cvmi-motion_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: cvmi_motion
+
+    lcls-plc-cvmi-motion_cvmi_motion_summary
+    lcls-plc-cvmi-motion_cvmi_motion_epics
+    lcls-plc-cvmi-motion_cvmi_motion_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
