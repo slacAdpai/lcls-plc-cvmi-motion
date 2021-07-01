@@ -3,6 +3,8 @@
   <POU Name="Main" Id="{3f08c9da-acd6-4059-bcf8-867945acb3ea}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
+	
+	fbLogHandler: FB_LogHandler;
     // Motors
     // CVMI Axes
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[GasJetX-EL7041]^STM Status^Status^Digital input 1;
@@ -110,7 +112,9 @@ VAR PERSISTENT
     fKTOF_ZPos : LREAL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF bInit THEN
+      <ST><![CDATA[fbLogHandler();
+
+IF bInit THEN
     //Sets axes position with persistent value
     // CVMI
     mcSetPosition[1](Axis:=M1.Axis, Position:=fGasJetXPos, Mode:=FALSE, Execute:=TRUE);
@@ -200,6 +204,7 @@ ELSE
 END_IF;]]></ST>
     </Implementation>
     <LineIds Name="Main">
+      <LineId Id="205" Count="1" />
       <LineId Id="3" Count="86" />
       <LineId Id="2" Count="0" />
     </LineIds>
