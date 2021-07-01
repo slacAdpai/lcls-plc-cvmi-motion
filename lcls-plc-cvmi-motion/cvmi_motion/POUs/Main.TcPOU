@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="Main" Id="{3f08c9da-acd6-4059-bcf8-867945acb3ea}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -199,5 +199,9 @@ ELSE
     END_IF
 END_IF;]]></ST>
     </Implementation>
+    <LineIds Name="Main">
+      <LineId Id="3" Count="86" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
